@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.albarregas.calculadora_rodrigogl;
+package es.albarregas.models;
 
 /**
  *
  * @author Rodrigo
  */
-public class Dividir {
-
-    public int dividir(int numero1, int numero2) {
-        int resultado = numero1 / numero2;
+public class Restar {
+    public int restar(int numero1, int numero2){
+        int resultado = numero1 - numero2;
         return resultado;
     }
 }

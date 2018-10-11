@@ -3,16 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.albarregas.calculadora_rodrigogl;
+package es.albarregas.beans;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Rodrigo
  */
-public class Calculator {
+public class Calculator implements Serializable{
     int numero1;
     int numero2;
     String simbol;
+    int resultado;
 
     public int getNumero1() {
         return numero1;
