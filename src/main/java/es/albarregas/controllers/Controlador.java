@@ -5,6 +5,11 @@
  */
 package es.albarregas.controllers;
 
+import es.albarregas.beans.Calculator;
+import es.albarregas.models.Dividir;
+import es.albarregas.models.Multiplicar;
+import es.albarregas.models.Restar;
+import es.albarregas.models.Sumar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,6 +36,27 @@ public class Controlador extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Calculator miCalc = new Calculator();
+        Sumar miSuma = new Sumar();
+        Restar miResta = new Restar();
+        Dividir miDiv = new Dividir();
+        Multiplicar miMult = new Multiplicar();
+        
+        int num1 = Integer.parseInt(request.getParameter("num1"));
+        int num2 = Integer.parseInt(request.getParameter("num2"));
+        int resultado = -1;
+        String simbol = request.getParameter("op");
+        
+        if(simbol.equals("+")){
+            resultado = miSuma.sumar(num1, num2);
+        }else if(simbol.equals("-")){
+            resultado = miResta.restar(num1, num2);
+        }else if(simbol.equals("*")){
+            resultado = miMult.multiplicar(num1, num2);
+        }else if(simbol.equals("/")){
+            resultado = miDiv.dividir(num1, num2);
+        }
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

@@ -15,7 +15,7 @@ public class Calculator implements Serializable{
     int numero1;
     int numero2;
     String simbol;
-    int resultado;
+   
 
     public int getNumero1() {
         return numero1;

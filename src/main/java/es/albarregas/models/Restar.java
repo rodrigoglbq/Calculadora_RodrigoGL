@@ -11,7 +11,7 @@ package es.albarregas.models;
  */
 public class Restar {
     public int restar(int numero1, int numero2){
-        int resultado = numero1 - numero2;
-        return resultado;
+      return  numero1 - numero2;
+        
     }
 }
